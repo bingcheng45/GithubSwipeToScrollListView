@@ -1,0 +1,208 @@
+﻿<Window x:Class="Microsoft.Samples.Kinect.ControlsBasics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:k="http://schemas.microsoft.com/kinect/2014"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Microsoft.Samples.Kinect.ControlsBasics"
+        Name="ControlsBasicsWindow"
+        Title="Controls Basics"
+        mc:Ignorable="d"
+        MinWidth="500"
+        MinHeight="700"
+        FontFamily="Segoe UI"
+        WindowState="Maximized" Height="701.075" Width="842.149"
+        >
+
+    <k:KinectRegion x:Name="kinectRegion">
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Viewbox x:Name="kinectBodyViewbox"
+                 Grid.Row="0"
+                 Grid.RowSpan="4"
+                 Grid.Column="5"
+                 Grid.ColumnSpan="13">
+
+                <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
+
+            </Viewbox>
+
+            <ScrollViewer Grid.Row="1" Name="scrollViewer" 
+                                  HorizontalScrollBarVisibility="Auto"
+                                  VerticalScrollBarVisibility="Disabled" 
+                                  k:KinectRegion.IsScrollInertiaEnabled="true" >
+                        <ItemsControl Grid.Row="0" Name="itemsControl" ItemTemplate="{StaticResource Kinect250x250ItemTemplate}" Button.Click="ButtonClick">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel VerticalAlignment="Center" Orientation="Vertical" Margin="75,0,75,0" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </ScrollViewer>
+            <ScrollViewer
+                                  
+                      Name="scroller2"
+                      Margin="9,21,-0.493,10.746"
+                      Background="#FFC5C5C5"
+                      HorizontalScrollBarVisibility="Visible"
+                      VerticalScrollBarVisibility="Visible">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical"
+                            Grid.Column="1"
+                            Margin="90,21,18,10"
+                            Grid.Row="6"
+                            Grid.RowSpan="11"
+                            Grid.ColumnSpan="21"
+                            Background="#FF838383">
+                        <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                            <TextBox Text="Printer1" x:Name="printer1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" Click="Button_Click_1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Button Width="50"
+                ClickMode="Press"
+    Content="Click Me to go right!" 
+    local:EventFocusAttachment.ElementToFocus="{Binding ElementName=printer5}" 
+    Height="286" Click="Button_Click" 
+    />
+                    <StackPanel Orientation="Vertical"
+                            Grid.Column="1"
+                            Margin="90,21,18,10"
+                            Grid.Row="6"
+                            Grid.RowSpan="11"
+                            Grid.ColumnSpan="21"
+                            Background="#FF838383">
+                        <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                            <TextBox Text="Printer2" x:Name="printer2"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button x:Name="btnmiddle" Content="Text1"  />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical"
+                            Grid.Column="1"
+                            Margin="90,21,18,10"
+                            Grid.Row="6"
+                            Grid.RowSpan="11"
+                            Grid.ColumnSpan="21"
+                            Background="#FF838383">
+                        <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                            <TextBox Text="Printer3" x:Name="printer3" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical"
+                            Grid.Column="1"
+                            Margin="90,21,18,10"
+                            Grid.Row="6"
+                            Grid.RowSpan="11"
+                            Grid.ColumnSpan="21"
+                            Background="#FF838383">
+                        <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                            <TextBox Text="Printer4" x:Name="printer4" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Button Width="50"
+                        x:Name="rightbtn"
+                ClickMode="Hover"
+    Content="Click Me to go Left!" 
+    local:EventFocusAttachment.ElementToFocus="{Binding ElementName=printer1}" 
+    Height="286" 
+    />
+                    <StackPanel Orientation="Vertical"
+                            Grid.Column="1"
+                            Margin="50,21,18,10"
+                            Grid.Row="6"
+                            Grid.RowSpan="11"
+                            Grid.ColumnSpan="21"
+                            Background="#FF838383">
+                        <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                            <TextBox Text="Printer5" x:Name="printer5" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                            <Button Content="Text1" />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+            
+        
+    </k:KinectRegion>
+</Window>
